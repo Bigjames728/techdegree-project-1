@@ -29,7 +29,9 @@ let quotes = [
   },
   {
       quote: '“If you want to live a happy life, tie it to a goal, not to people or objects.”',
-      source: "Albert Einstein"
+      source: "Albert Einstein",
+      citation: "Lifehack.org",
+      year: 1935
   },
   {
       quote: '“Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.”',
@@ -54,16 +56,46 @@ let quotes = [
 ];
 
 
+
 /***
  * `getRandomQuote` function
 ***/
+
+
+function getRandomQuote( arr ) {
+    let randomNumber = Math.floor( Math.random() * quotes.length);
+    let randomQuote = quotes[randomNumber];
+    console.log(randomQuote);
+    return randomQuote;
+
+}
+
+getRandomQuote(quotes);
+
 
 
 
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+    let quoteObject = getRandomQuote(quotes);
+    let html = `
+        <p class="quote">${quoteObject['quotes']}</p>
+        <p class="source">${quoteObject['source']}`
 
+            if ( quoteObject['citation'] ) {
+                html += `<span class="citation">${quoteObject['citation']}</span>`;
+            } if ( quoteObject['year'] ) {
+                html += `<span class="year">${quoteObject['year']}</span>`;
+            }
+            html += '</p>';
+
+            console.log(html);
+
+            document.getElementById('quote-box').innerHTML = html;
+
+}
 
 
 /***
