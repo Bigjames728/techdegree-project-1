@@ -3,7 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-
+// Here is my random quote generator. I am aiming for an "exceeds expecations" grade with this. Thank you for reviewing!
 
 // Below is my array of objects that uncludes a quote and a source property per object.
 
@@ -22,13 +22,15 @@ let quotes = [
   },
   {
       quote: '“A comfort zone is a beautiful place, but nothing ever grows there.”',
-      source: "Author Unknown"
+      source: "Author Unknown",
+      tag: 'Motivation'
   },
   {
       quote: '“If you want to live a happy life, tie it to a goal, not to people or objects.”',
       source: "Albert Einstein",
       citation: "Lifehack.org",
-      year: 1935
+      year: 1935,
+      tag: 'Motivation'
   },
   {
       quote: '“Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.”',
@@ -84,10 +86,12 @@ function printQuote() {
         <p class="quote">${quoteObject.quote}</p>
         <p class="source">${quoteObject.source}`
 
-            if ( quoteObject['citation'] ) {
-                html += `<span class="citation">${quoteObject['citation']}</span>`;
-            } if ( quoteObject['year'] ) {
-                html += `<span class="year">${quoteObject['year']}</span>`;
+            if ( quoteObject.citation ) {
+                html += `<span class="citation">${quoteObject.citation}</span>`;
+            } if ( quoteObject.year ) {
+                html += `<span class="year">${quoteObject.year}</span>`;
+            } if ( quoteObject.tag ) {
+                html += `<span class="tag">, ${quoteObject.tag}</span>`;
             }
             html += '</p>';
 
