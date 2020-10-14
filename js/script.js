@@ -3,13 +3,10 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
+
+// Below is my array of objects that uncludes a quote and a source property per object.
+
 let quotes = [
   {
       quote: '“If the plan doesn’t work, change the plan, but never the goal.”',
@@ -57,10 +54,10 @@ let quotes = [
 
 
 
-/***
- * `getRandomQuote` function
-***/
 
+
+// The function below generates a random Number between 0 and the length of the quotes array above and then pulls 
+// the quote tied to the number it generated and returns the value.
 
 function getRandomQuote( arr ) {
     let randomNumber = Math.floor( Math.random() * quotes.length);
@@ -75,14 +72,17 @@ getRandomQuote(quotes);
 
 
 
-/***
- * `printQuote` function
-***/
+
+// The below function sets quoteObject as the variable that stores the random quote that is chosen. 
+// It also defines the writing that appears on the webpage in the quote-box using conditionals to 
+// decide if it should also include the citation and year or not. It then gets the quote-box element by its ID
+// and replaces the HTML inside with the html variable I defined.
+
 function printQuote() {
     let quoteObject = getRandomQuote(quotes);
     let html = `
-        <p class="quote">${quoteObject['quotes']}</p>
-        <p class="source">${quoteObject['source']}`
+        <p class="quote">${quoteObject.quote}</p>
+        <p class="source">${quoteObject.source}`
 
             if ( quoteObject['citation'] ) {
                 html += `<span class="citation">${quoteObject['citation']}</span>`;
@@ -91,9 +91,11 @@ function printQuote() {
             }
             html += '</p>';
 
-            console.log(html);
+            
 
             document.getElementById('quote-box').innerHTML = html;
+
+            
 
 }
 
