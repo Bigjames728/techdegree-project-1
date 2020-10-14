@@ -78,7 +78,8 @@ getRandomQuote(quotes);
 // The below function sets quoteObject as the variable that stores the random quote that is chosen. 
 // It also defines the writing that appears on the webpage in the quote-box using conditionals to 
 // decide if it should also include the citation and year or not. It then gets the quote-box element by its ID
-// and replaces the HTML inside with the html variable I defined.
+// and replaces the HTML inside with the html variable I defined. Lastly, it changes the background color to a random
+// color everytime the button is clicked or the setInterval() kicks in.
 
 function printQuote() {
     let quoteObject = getRandomQuote(quotes);
