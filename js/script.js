@@ -103,6 +103,10 @@ function printQuote() {
 
 }
 
+// The below code calls the printQuote function every 7 seconds.
+
+setInterval(printQuote, 7000);
+
 
 /***
  * click event listener for the print quote button
