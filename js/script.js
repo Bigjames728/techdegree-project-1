@@ -69,7 +69,7 @@ function getRandomQuote( arr ) {
 
 }
 
-getRandomQuote(quotes);
+
 
 
 
