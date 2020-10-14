@@ -99,7 +99,14 @@ function printQuote() {
 
             document.getElementById('quote-box').innerHTML = html;
 
+            let x = Math.floor(Math.random() * 256);
+            let y = Math.floor(Math.random() * 256);
+            let z = Math.floor(Math.random() * 256);
+            let bgColor = `rgb(${x}, ${y}, ${z})`;
             
+            document.body.style.background = bgColor;
+  
+    
 
 }
 
@@ -114,3 +121,5 @@ setInterval(printQuote, 7000);
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+// BEFORE SUBMITTING - get rid of the second pair of quotes around the random quote that's generated.
